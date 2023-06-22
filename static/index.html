@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ASCII Art Generator</title>
+</head>
+<body>
+    <h1>ASCII Art Generator</h1>
+    <form action="/form" method="POST">
+        <label for="text">Text:</label>
+        <input type="text" name="text" id="text" required><br><br>
+        
+        <label for="substring">Substring:</label>
+        <input type="text" name="substring" id="substring"><br><br>
+        
+        <label for="style">Style:</label>
+        <select name="style" id="style">
+            <option value="standard">Standard</option>
+            <option value="shadow">Shadow</option>
+            <option value="thinkertoy">ThinkerToy</option>
+            <option value="extrafont">ExtraFont</option>
+        </select><br><br>
+        
+        <label for="color">Color:</label>
+        <input type="text" name="color" id="color"><br><br>
+        
+        <label for="align">Alignment:</label>
+        <select name="align" id="align">
+            <option value="left">Left</option>
+            <option value="right">Right</option>
+            <option value="center">Center</option>
+            <option value="justify">Justify</option>
+        </select><br><br>
+        
+        <input type="submit" value="Generate ASCII Art">
+    </form>
+</body>
+</html>
