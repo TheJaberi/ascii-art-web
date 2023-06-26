@@ -1,3 +1,3 @@
-module asciiart
+module webart
 
-go 1.19
+go 1.20
