@@ -1,51 +1,37 @@
-           Ascii-Art-Web
+## ASCII Art Web
 
-This is my first Web project written in go. It's a web server for outputting the text in a graphic representation of ASCII and dowloading a file with it.
-execute: go run main.go
+The program allows users to draw ASCII Art from the input.  
+Users are supposed to input only ASCII characters.  
+Users are given these options: Banners, Colors, Alignment,and Download for the Ascii Art.
 
-Ascii-art-web consists in creating and running a server, in which it will be possible to use a web GUI (graphical user interface) version of a program that outputs text in a graphical representation of ASCII (ascii-art project in my ascii-art repo)
+## Run Locally
 
-Basic requirements:
+Clone the project
 
-    You must use your ascii-art application for this project.
-    You can run your server locally (localhost) or using an API.
-    You must use the different banners for the website.
-    It should be available to choose between the banners.
-    You have to use the right HTTP methods.
-    You need to have a well established connection between server and client.
+```bash
+git clone https://learn.reboot01.com/git/amali/ascii-art-web.git
+```
 
-This project will help you learn about :
+Go to the project directory
 
-    Client utilities.
-    Back-end and front-end.
-    The basics of web :
-        Server
-        HTML
-        HTTP
-        HTTP methods
-        HTTP status
-    Ways to receive data
-    Ways to output data
+```bash
+  cd ascii-art-web
+```
 
-Instructions
+**Example how to run the program:**
 
-    You must handle website errors(400, 404 and 500).
-    The web server must be created in Go.
-    The code must respect the good practices.
-    The project must have files written in HTML.
-                                                                                                                                                                                                                   
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+_make sure you are in project directory_
 
-Usage: go run main.go followed by one of these options
+```bash
+go run main.go
+```
 
-1- [STRING]
-2- [STRING] [BANNER]
+1. Open http://localhost:8080/ in a browser
+2. Type any text in english layout
+3. Choose the preferred banner, color, and alignment.
+4. Click the "Submit" button and see the result!
+5. Click the "Download" button to export the output result.
 
+## Authors
 
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-live server
-prettier
-
-https://www.youtube.com/watch?v=dQw4w9WgXcQ
+- ajaberi - amali - emahfood
