@@ -2,7 +2,7 @@
 
 The program allows users to draw ASCII Art from the input.  
 Users are supposed to input only ASCII characters.  
-Users are given these options: Banners, Colors, Alignment,and Download for the Ascii Art.
+Users are given these options: Banners, Colors, Alignment,and Download of the Ascii Art.
 
 ## Run Locally
 
