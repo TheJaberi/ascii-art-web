@@ -2,121 +2,44 @@
 <html>
 <head>
   <title>Ascii-art Generator</title>
-  <style>
-    body {
-      background-color: #f2f2f2;
-      font-family: Arial, sans-serif;
-      color: #333;
-      margin: 0;
-      padding: 20px;
-    }
-
-    h1 {
-      color: #333;
-      text-align: center;
-    }
-
-    form {
-      margin-top: 30px;
-      text-align: center;
-    }
-
-    textarea {
-      width: 300px;
-      height: 100px;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 16px;
-      outline: none;
-      resize: vertical;
-    }
-
-    label {
-      display: block;
-      margin-top: 10px;
-      color: #333;
-    }
-
-    select {
-      width: 150px;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 16px;
-      outline: none;
-    }
-
-    .cta {
-      display: inline-block;
-      background-color: #337ab7;
-      color: #fff;
-      font-size: 16px;
-      border: none;
-      border-radius: 4px;
-      padding: 10px 20px;
-      margin-top: 10px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .cta:hover {
-      background-color: #23527c;
-    }
-
-    button[type="submit"] {
-      display: inline-block;
-      background-color: #337ab7;
-      color: #fff;
-      font-size: 16px;
-      border: none;
-      border-radius: 4px;
-      padding: 10px 20px;
-      margin-top: 10px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    button[type="submit"]:hover {
-      background-color: #23527c;
-    }
-
-    p {
-      margin-top: 30px;
-      color: #333;
-    }
-
-    pre {
-      background-color: #fff;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      padding: 20px;
-      white-space: pre-wrap;
-      font-size: 16px;
-      overflow-x: auto;
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <h1>Ascii-art Generator</h1>
-  <form method="POST" action="/">
+  <form method="POST" action="/ascii-art">
+    {{if .ShowOutput}}<a href="data:text/plain;charset=utf-8,{{.Output}}" download="ascii-art-output.txt" class="download-btn">Download</a>{{end}}
+    <br><br>
     <textarea id="textbox" name="textbox" placeholder="Enter text here" rows="4">{{.Str}}</textarea>
     <br>
-    <label for="style">Font:</label>
+    <label for="style">Banner:</label>
     <select id="style" name="style">
+      {{if .ShowOutput}}<option value="{{.Font}}"> Recent: {{.Font}}</option>{{end}}
       <option value="standard">Standard</option>
       <option value="shadow">Shadow</option>
       <option value="thinkertoy">Thikertoy</option>
+      <option value="doom">Doom</option>
       <option value="extrafont">extrafont</option>
     </select>
+
+    <input type="color" id="color" name="color" class="color-picker" value="{{.Color}}">
     <br>
+    <label for="alignment">Alignment:</label>
+    <select id="alignment" name="alignment">
+      {{if .ShowOutput}}<option value="{{.Alignment}}"> Recent: {{.Alignment}}</option>{{end}}
+      <option value="text-left">Left</option>
+      <option value="text-center">Center</option>
+      <option value="text-right">Right</option>      
+    </select>
+
     <button type="submit">Submit</button>
+    <br>
   </form>
   {{if .ShowOutput}}
-  <p>Output:</p>
-  <pre>{{.Output}}</pre>
+  <pre style="text-align: {{.Alignment}};"><span style="color:{{.Color}}">{{.Output}}</span></pre>
   {{else}}
-  <p>No output to show.</p>
+  <pre> <p>No output to show.</p></pre>
   {{end}}
+  
+
 </body>
 </html>

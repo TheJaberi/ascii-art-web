@@ -1,3 +1,3 @@
-module webart
+module AMJ
 
 go 1.20
