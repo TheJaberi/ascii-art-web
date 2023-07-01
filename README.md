@@ -44,15 +44,6 @@ Usage: go run main.go followed by one of these options
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-sudo rm -rf ascii-art-web/
-
-git config --global credential.helper store
-
-git clone https://learn.reboot01.com/git/amali/ascii-art-web.git
-
-uni code https://web.itu.edu.tr/~sgunduz/courses/mikroisl/ascii.html
-
-git config --global user.email "e.amgad2010@gmail.com" git config --global user.name "amali"
 
 live server
 prettier
