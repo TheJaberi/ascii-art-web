@@ -3,14 +3,21 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"log"
 
 	webart "AMJ/controllers"
 )
 
 func main() {
-	http.HandleFunc("/css/", webart.CSSHandler)
-	http.HandleFunc("/", webart.Handler)
-	http.HandleFunc("/ascii-art", webart.FormHandler)
+	// Set up HTTP request handlers for different paths
+	http.HandleFunc("/css/", webart.CSSHandler)      // Handler for serving CSS files
+	http.HandleFunc("/", webart.Handler)             // Handler for the root path ("/")
+	http.HandleFunc("/ascii-art", webart.FormHandler) // Handler for the "/ascii-art" path
+
+	// Start the HTTP server
 	fmt.Println("Server listening on port http://localhost:8080 ...")
-	http.ListenAndServe(":8080", nil)
+	err := http.ListenAndServe(":8080", nil) 
+	if err != nil {
+		log.Fatal(err)
+	}
 }

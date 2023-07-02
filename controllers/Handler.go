@@ -5,6 +5,7 @@ import (
 	"net/http"
 )
 
+// PageData represents the data used in the template for rendering the page.
 type PageData struct {
 	ShowOutput bool
 	Output     string
@@ -14,13 +15,15 @@ type PageData struct {
 	Alignment  string
 }
 
+// Handler handles the HTTP requests for the root path ("/").
 func Handler(w http.ResponseWriter, r *http.Request) {
+	// Check if the request path is not the root path
 	if r.URL.Path != "/" {
 		NotFoundHandler(w, r)
-		// http.Error(w, "Error 404: Page Not Found", http.StatusNotFound)
 		return
 	}
 
+	// Handle GET requests
 	if r.Method == "GET" {
 		tmpl, err := template.ParseFiles("views/index.html")
 		if err != nil {
