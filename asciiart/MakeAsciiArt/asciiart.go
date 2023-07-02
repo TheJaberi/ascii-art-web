@@ -26,10 +26,10 @@ func Asciiart(str, font string) (string, error) { // used for ascii art web
 	if AllEmpty(args) {
 		args = args[1:]
 	}
-	// Writing text line by line into res
+	// Writing text line by line into res & holding it at restoprint
 	for _, word := range args {
 		if word == "" {
-			// fmt.Println()
+			restoprint = restoprint + "\n"
 			continue
 		}
 
@@ -38,8 +38,6 @@ func Asciiart(str, font string) (string, error) { // used for ascii art web
 			if err != nil {
 				return "", err
 			}
-			// fmt.Println(res)
-
 			restoprint = restoprint + "\n" + res
 			res = ""
 		}

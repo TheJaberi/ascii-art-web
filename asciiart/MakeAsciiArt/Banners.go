@@ -12,7 +12,6 @@ func Banners(banner string) (string, error) {
 		"thinkertoy": "thinkertoy.txt",
 		"doom":       "doom.txt",
 		"extrafont":  "extrafont.txt",
-
 		// Add more banners here as needed
 	}
 

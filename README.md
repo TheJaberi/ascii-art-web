@@ -9,7 +9,7 @@ Users are given these options: Banners, Colors, Alignment,and Download of the As
 Clone the project
 
 ```bash
-git clone https://learn.reboot01.com/git/amali/ascii-art-web.git
+git clone https://learn.reboot01.com/git/ajaberi/ascii-art-web.git
 ```
 
 Go to the project directory
